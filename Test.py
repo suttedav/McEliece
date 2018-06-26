@@ -70,13 +70,12 @@ print("Test code completed :-)" )
 print("test GitHub")
 
 
+
+
+
+
 # ========== read in txt file
-f = open('test_input.txt','r')
-message = f.read()
-print(message)
-f.close()
-
-
+# some function to transform text stings to binary strings and vice versa
 import binascii
 
 def text_to_bits(text, encoding='utf-8', errors='surrogatepass'):
@@ -92,10 +91,20 @@ def int2bytes(i):
     n = len(hex_string)
     return binascii.unhexlify(hex_string.zfill(n + (n & 1)))
 
+# read in from a txt file
+f = open('test_input.txt','r')
+message = f.read()
+print(message)
+f.close()
 
+# transfer it to binary and back
 message_bin=text_to_bits(message)
 print(message_bin)
 print("length of binary string is", len(message_bin))
 message_normal=text_from_bits(message_bin)
 print(message_normal)
 
+# write output to another txt file
+f = open('test_output.txt','w')
+f.write(message_normal)
+f.close()
