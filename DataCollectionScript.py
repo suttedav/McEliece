@@ -3,15 +3,15 @@
 #DataCollectionScript.py
 #!/opt/sage-5.6/sage -python
 import time
-from os import environ
-print environ
 from sage.all import *
+
 ############################################
 #Functions & Classes to Import
 ############################################
-load("./SageClasses/GoppaCode.sage")
-load("./SageClasses/McElieceCryptosystem.sage")
-load("./SageClasses/SternsAlgorithm.sage")
+load("/Users/raban/Documents/QSecure/McEliece/SageClasses/GoppaCode.sage")
+load("/Users/raban/Documents/QSecure/McEliece/SageClasses/McElieceCryptosystem.sage")
+load("/Users/raban/Documents/QSecure/McEliece/SageClasses/SternsAlgorithm.sage")
+
 def GetRandomMessage(message_length):
        message = matrix(GF(2), 1, message_length);
        for i in range(message_length):
